@@ -81,6 +81,9 @@ class CheckBoxGroup extends HTMLElement {
 		for(let box of boxes) {
 			this.appendChild(box);
 		}
+		if(this.checked.length === optNodes.length) {
+			this.__allIp.checked = true;
+		}
 	}
 	__optChanged() {
 		let opts = this.__inputElements;
