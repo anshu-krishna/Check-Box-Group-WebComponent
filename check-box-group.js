@@ -26,7 +26,8 @@ class CheckBoxGroup extends HTMLElement {
 		this.__frontPropagation = false;
 	}
 	connectedCallback() {
-		let boxes = [];
+		setTimeout(()=>{
+			let boxes = [];
 		let count = -1;
 		let optNodes = this.shadowRoot.querySelector('slot').assignedElements();
 		this.innerHTML = '';
@@ -84,6 +85,7 @@ class CheckBoxGroup extends HTMLElement {
 		if(this.checked.length === optNodes.length) {
 			this.__allIp.checked = true;
 		}
+		}, 1);
 	}
 	__optChanged() {
 		let opts = this.__inputElements;
